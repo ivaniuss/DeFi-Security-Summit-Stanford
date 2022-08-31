@@ -41,10 +41,6 @@ contract InSecureumLenderPool {
         token.safeTransfer(msg.sender, _amount);
     }   
 
-    function getBalance(address _address) external view returns(uint256) {
-        return balances[_address];
-    }
-
     /// @dev Give borrower all the tokens to make a flashloan.
     ///      For this with get the amount of tokens in the lending pool before, then we give
     ///      control to the borrower to make the flashloan. After the borrower makes the flashloan

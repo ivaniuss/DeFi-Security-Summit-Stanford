@@ -45,9 +45,9 @@ contract InSecureumLenderPoolTest is Test {
                 token.balanceOf(address(target))
             )
         );
-        uint256 playerBalance = target.getBalance(player);
+        uint256 playerBalance = target.balances(player);
         emit log_named_uint("player balance", playerBalance);
-        target.withdraw(target.getBalance(player));
+        target.withdraw(target.balances(player));
 
         assertEq(token.balanceOf(address(target)), 0);
     }
